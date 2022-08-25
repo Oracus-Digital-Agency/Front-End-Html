@@ -35,6 +35,9 @@
   height: 100vh;
   overflow-y: auto;
 }
+.signup .form img {
+  display: none !important;
+}
 .signup .form > div {
   margin: 190px 50px 30px 50px;
 }

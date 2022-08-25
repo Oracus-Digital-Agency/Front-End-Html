@@ -33,6 +33,7 @@
         background-position: top right;
         height: 100vh;
         overflow-y: auto;
+        img{display: none !important;}
         > div{
             margin: 190px 50px 30px 50px;
             h3{
