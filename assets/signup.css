@@ -123,6 +123,7 @@
   .signup .row .form img {
     position: absolute;
     padding-left: 50px;
+    display: block !important;
     top: 100px;
     width: 50vw;
   }
