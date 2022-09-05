@@ -58,7 +58,8 @@
 }
 .forgot .form > div input,
 .forgot .form form input {
-  width: 325px;
+  max-width: 325px;
+  width: 100%;
 }
 .forgot .form > div > div label,
 .forgot .form form > div label {
@@ -124,6 +125,7 @@
     display: none;
   }
   .forgot .row .form {
+    padding: 20px;
     background: rgba(185, 192, 254, 0.168627451) url("./imgs/dotted.png");
     background-repeat: no-repeat;
     background-position: top right;

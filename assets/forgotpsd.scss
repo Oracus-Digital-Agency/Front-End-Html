@@ -56,7 +56,8 @@
         font-size: 0.9rem;
       }
       input {
-        width: 325px;
+        max-width: 325px;
+        width: 100%;
       }
       > div {
         label {
@@ -114,6 +115,8 @@
         display: none;
       }
       .form {
+        padding: 20px;
+
         background: #b9c0fe2b url("./imgs/dotted.png");
         background-repeat: no-repeat;
         background-position: top right;
