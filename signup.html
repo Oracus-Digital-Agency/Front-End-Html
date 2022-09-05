@@ -27,15 +27,17 @@
           />
           <div>
             <h3 class="mb-4">Sign up</h3>
-            <form action="post">
+            <form action="post" class="needs-validation" novalidate>
               <div class="mb-1">
-                <label for="inputEmail" class="form-label">Email</label>
+                <label for="inputEmail" class="form-label">Name</label>
                 <input
-                  type="email"
+                  type="text"
                   class="form-control"
                   id="inputEmail"
-                  placeholder="input your email in here"
+                  placeholder="input your name in here"
+                  required
                 />
+                <div class="invalid-feedback">Invalid text</div>
               </div>
               <div class="mb-1">
                 <label for="inputEmail" class="form-label">Email</label>
@@ -44,25 +46,35 @@
                   class="form-control"
                   id="inputEmail"
                   placeholder="input your email in here"
+                  required
                 />
+                <div class="invalid-feedback">
+                  Please enter a correct email address
+                </div>
               </div>
               <div class="mb-1">
-                <label for="inputEmail" class="form-label">Email</label>
+                <label for="inputEmail" class="form-label">Password</label>
                 <input
-                  type="email"
+                  type="password"
                   class="form-control"
                   id="inputEmail"
                   placeholder="input your email in here"
+                  required
                 />
+                <div class="invalid-feedback">Invalid text here</div>
               </div>
               <div class="mb-2">
-                <label for="inputPassword" class="form-label">Email</label>
+                <label for="inputPassword" class="form-label"
+                  >Confirm password</label
+                >
                 <input
                   type="password"
                   class="form-control"
                   id="inputPassword"
                   placeholder="input your password in here"
+                  required
                 />
+                <div class="invalid-feedback">Password do not match</div>
               </div>
               <div class="mb-2">
                 <div class="form-check">
@@ -79,7 +91,7 @@
                 </div>
               </div>
               <div class="btns">
-                <button type="button" class="btn col-12 btn-primary mb-2 mt-2">
+                <button type="submit" class="btn col-12 btn-primary mb-2 mt-2">
                   Sign in
                 </button>
                 <span>or</span>
@@ -93,5 +105,6 @@
       </div>
     </div>
     <script src="./assets/bootstrap/bootstrap.min.js"></script>
+    <script src="./assets/main.js"></script>
   </body>
 </html>

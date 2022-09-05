@@ -27,7 +27,7 @@
           />
           <div>
             <h3>Sign in</h3>
-            <form action="post">
+            <form action="post" class="needs-validation" novalidate>
               <div class="mb-3">
                 <label for="inputEmail" class="form-label">Email</label>
                 <input
@@ -35,16 +35,24 @@
                   class="form-control"
                   id="inputEmail"
                   placeholder="input your email in here"
+                  required
                 />
+                <div class="invalid-feedback">
+                  Please enter a correct email address
+                </div>
               </div>
               <div class="mb-2">
-                <label for="inputPassword" class="form-label">Email</label>
+                <label for="inputPassword" class="form-label">Password</label>
                 <input
                   type="password"
                   class="form-control"
                   id="inputPassword"
                   placeholder="input your password in here"
+                  required
                 />
+                <div class="invalid-feedback">
+                  Please enter a correct password
+                </div>
               </div>
               <div>
                 <a id="forgotpsd" class="mb-4" href="forgotpsd.html"
@@ -52,7 +60,7 @@
                 >
               </div>
               <div class="btns">
-                <button type="button" class="btn col-12 btn-primary mb-2 mt-2">
+                <button type="submit" class="btn col-12 btn-primary mb-2 mt-2">
                   Sign in
                 </button>
                 <span>or</span>
@@ -69,5 +77,6 @@
       </div>
     </div>
     <script src="./assets/bootstrap/bootstrap.min.js"></script>
+    <script src="./assets/main.js"></script>
   </body>
 </html>
