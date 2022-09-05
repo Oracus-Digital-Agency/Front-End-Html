@@ -125,20 +125,21 @@
     display: none;
   }
   .forgot .row .form {
-    padding: 20px;
+    padding: 0px;
     background: rgba(185, 192, 254, 0.168627451) url("./imgs/dotted.png");
     background-repeat: no-repeat;
     background-position: top right;
     height: 100vh;
     position: relative;
   }
-  .forgot .row .form .forgotContent,
-.forgot .row .form form {
-    background: rgba(255, 255, 255, 0.193) !important;
-    padding: 20px;
+  .forgot .row .form .forgotContent {
+    padding: 25px;
     border-radius: 15px;
-    -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
+  }
+  .forgot .row .form form {
+    padding: 25px;
   }
   .forgot .row .form .forgotimg,
 .forgot .row .form .logoDown {
