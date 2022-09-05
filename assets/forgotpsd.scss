@@ -108,6 +108,11 @@
         display: none;
       }
       .form {
+        background: #fff url("./imgs/dotted.png");
+        background-repeat: no-repeat;
+        background-position: top right;
+        height: 100vh;
+        position: relative;
         .forgotContent,
         form {
           background: rgba(255, 255, 255, 0.193) !important;

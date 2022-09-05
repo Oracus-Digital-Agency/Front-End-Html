@@ -118,6 +118,13 @@
   .forgot .row .pics {
     display: none;
   }
+  .forgot .row .form {
+    background: #fff url("./imgs/dotted.png");
+    background-repeat: no-repeat;
+    background-position: top right;
+    height: 100vh;
+    position: relative;
+  }
   .forgot .row .form .forgotContent,
 .forgot .row .form form {
     background: rgba(255, 255, 255, 0.193) !important;
