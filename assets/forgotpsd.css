@@ -36,6 +36,11 @@
   border-radius: 5px;
   color: #a6afff;
   margin-right: 5px;
+  cursor: pointer;
+}
+.forgot .form .bckLogo i:hover {
+  background: rgba(185, 192, 254, 0.6039215686);
+  color: #4e5de5;
 }
 .forgot .form > div,
 .forgot .form form {
@@ -119,7 +124,7 @@
     display: none;
   }
   .forgot .row .form {
-    background: #fff url("./imgs/dotted.png");
+    background: rgba(185, 192, 254, 0.168627451) url("./imgs/dotted.png");
     background-repeat: no-repeat;
     background-position: top right;
     height: 100vh;

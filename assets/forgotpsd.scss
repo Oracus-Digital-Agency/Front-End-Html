@@ -36,6 +36,12 @@
         border-radius: 5px;
         color: #a6afff;
         margin-right: 5px;
+        cursor: pointer;
+
+        &:hover {
+          background: #b9c0fe9a;
+          color: #4e5de5;
+        }
       }
     }
     > div,
@@ -108,7 +114,7 @@
         display: none;
       }
       .form {
-        background: #fff url("./imgs/dotted.png");
+        background: #b9c0fe2b url("./imgs/dotted.png");
         background-repeat: no-repeat;
         background-position: top right;
         height: 100vh;
