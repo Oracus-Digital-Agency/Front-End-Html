@@ -106,7 +106,7 @@ input[type=number]:focus,
 .dashboard .topbar .form span {
   position: absolute;
   top: 50%;
-  right: 20px;
+  right: 0;
   transform: translate(-50%, -50%);
   background: rgba(186, 193, 255, 0.7960784314);
   padding: 5px;

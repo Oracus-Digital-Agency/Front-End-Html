@@ -252,7 +252,8 @@
           </div>
         </div>
         <div class="msg "><h1>Hello, Welcome Back!</h1></div>
-        <div class="chart bg-danger">Chart</div>
+        <div class="chart"><canvas id="myChart"></canvas>
+        </div>
         <div class="updates bg-light shadow rounded-1 mb-1 p-3">
           <h3>Updates on Jobs</h3>
           <input type="text" class="form-control bg-opacity-100">
@@ -275,5 +276,38 @@
       </section>
     </main>
     <script src="./assets/bootstrap/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+      const labels = [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+      ];
+    
+      const data = {
+        labels: labels,
+        datasets: [{
+          label: 'My First dataset',
+          backgroundColor: 'blue',
+          borderColor: 'lightblue',
+          data: [0, 10, 5, 2, 20, 30, 45],
+        }]
+      };
+    
+      const config = {
+        type: 'line',
+        data: data,
+        options: {}
+      };
+    </script>
+ <script>
+  const myChart = new Chart(
+    document.getElementById('myChart'),
+    config
+  );
+</script>    
   </body>
 </html>
