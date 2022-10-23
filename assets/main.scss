@@ -1,3 +1,7 @@
+@font-face {
+  font-family: Eastman Roman Trial;
+  src: url(EastmanRomanTrial-Regular.otf);
+}
 * {
   box-sizing: border-box;
   font-family: Eastman Roman Trial;
@@ -71,6 +75,81 @@ input[type="number"]:focus,
   outline: none !important;
   box-shadow: none !important;
   border: none !important;
+}
+
+.dashboard {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-areas:
+    "topbar topbar"
+    "msg updates"
+    "chart updates"
+    "chart calendar"
+    "users calendar";
+  .topbar {
+    grid-area: topbar;
+    height: 46px;
+    // background-color: yellow;
+
+    display: flex;
+    .form {
+      flex: 3;
+      position: relative;
+      input {
+        width: 100%;
+        background: #BAC1FF38;
+        
+      }
+      span {
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        transform: translate(-50%, -50%);
+        background: #bac1ffcb;
+        padding: 5px;
+        border-radius: 5px;
+      }
+    }
+    .profile {
+      flex: 1.5;
+      // background: gold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+
+      div {
+        margin: 10px;
+        &::before {
+          content: "";
+          position: absolute;
+          height: 100%;
+          width: 1px;
+          background-color: rgb(179, 179, 179);
+
+          span {
+            margin-left: 5px;
+          }
+        }
+      }
+    }
+  }
+  .msg {
+    grid-area: msg;
+  }
+  .chart {
+    grid-area: chart;
+  }
+  .updates {
+    grid-area: updates;
+  }
+  .calendar {
+    grid-area: calendar;
+  }
+  .users {
+    grid-area: users;
+  }
 }
 
 // body {

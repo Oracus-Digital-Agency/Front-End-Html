@@ -1,3 +1,7 @@
+@font-face {
+  font-family: Eastman Roman Trial;
+  src: url(EastmanRomanTrial-Regular.otf);
+}
 * {
   box-sizing: border-box;
   font-family: Eastman Roman Trial;
@@ -73,6 +77,70 @@ input[type=number]:focus,
   outline: none !important;
   box-shadow: none !important;
   border: none !important;
+}
+
+.dashboard {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-areas: "topbar topbar" "msg updates" "chart updates" "chart calendar" "users calendar";
+}
+.dashboard .topbar {
+  grid-area: topbar;
+  height: 46px;
+  display: flex;
+}
+.dashboard .topbar .form {
+  flex: 3;
+  position: relative;
+}
+.dashboard .topbar .form input {
+  width: 100%;
+  background: rgba(186, 193, 255, 0.2196078431);
+}
+.dashboard .topbar .form span {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translate(-50%, -50%);
+  background: rgba(186, 193, 255, 0.7960784314);
+  padding: 5px;
+  border-radius: 5px;
+}
+.dashboard .topbar .profile {
+  flex: 1.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.dashboard .topbar .profile div {
+  margin: 10px;
+}
+.dashboard .topbar .profile div::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 1px;
+  background-color: rgb(179, 179, 179);
+}
+.dashboard .topbar .profile div::before span {
+  margin-left: 5px;
+}
+.dashboard .msg {
+  grid-area: msg;
+}
+.dashboard .chart {
+  grid-area: chart;
+}
+.dashboard .updates {
+  grid-area: updates;
+}
+.dashboard .calendar {
+  grid-area: calendar;
+}
+.dashboard .users {
+  grid-area: users;
 }
 
 .nav-item a {
