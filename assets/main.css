@@ -82,12 +82,12 @@ input[type=number]:focus,
 .dashboard {
   width: 100%;
   display: grid;
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: 3fr 300px;
+  grid-template-rows: 46px 50px 1fr 1fr 70px;
   grid-template-areas: "topbar topbar" "msg updates" "chart updates" "chart calendar" "users calendar";
 }
 .dashboard .topbar {
   grid-area: topbar;
-  height: 46px;
   display: flex;
 }
 .dashboard .topbar .form {
@@ -111,8 +111,41 @@ input[type=number]:focus,
   flex: 1.5;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   position: relative;
+}
+@media screen and (max-width: 1204px) {
+  .dashboard .topbar .profile {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 1080px) {
+  .dashboard .topbar .profile {
+    flex: 2;
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 970px) {
+  .dashboard .topbar .profile {
+    flex: 3;
+    font-size: 12px;
+  }
+  .dashboard .topbar .profile img {
+    width: 30px;
+    height: 30px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .dashboard .topbar .profile {
+    flex: 1;
+    font-size: 12px;
+  }
+  .dashboard .topbar .profile .name::before {
+    display: none;
+  }
+  .dashboard .topbar .profile .name > span {
+    display: none;
+  }
 }
 .dashboard .topbar .profile div {
   margin: 10px;
@@ -120,7 +153,9 @@ input[type=number]:focus,
 .dashboard .topbar .profile div::before {
   content: "";
   position: absolute;
-  height: 100%;
+  height: 50%;
+  top: 50%;
+  transform: translateY(-50%);
   width: 1px;
   background-color: rgb(179, 179, 179);
 }
@@ -129,6 +164,11 @@ input[type=number]:focus,
 }
 .dashboard .msg {
   grid-area: msg;
+}
+.dashboard .msg h1 {
+  font-size: 30px;
+  padding: 10px;
+  color: #B9C0FE;
 }
 .dashboard .chart {
   grid-area: chart;
@@ -143,6 +183,11 @@ input[type=number]:focus,
   grid-area: users;
 }
 
+@media screen and (max-width: 768px) {
+  .sidebar {
+    display: none !important;
+  }
+}
 .nav-item a {
   padding: 20px !important;
   color: #a4a6b3;
