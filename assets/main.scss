@@ -88,6 +88,15 @@ input[type="number"]:focus,
     "chart updates"
     "chart calendar"
     "users calendar";
+
+    @media screen and (max-width: 768px) {
+      grid-template-areas: "topbar topbar"
+      "msg msg"
+      "chart chart"
+      "updates updates"
+      "calendar calendar"
+      "users users";
+    }
   .topbar {
     grid-area: topbar;
     // max-height: 46px;
@@ -180,6 +189,9 @@ input[type="number"]:focus,
   }
   .updates {
     grid-area: updates;
+    label {
+      font-size: 12px;
+    }
   }
   .calendar {
     grid-area: calendar;

@@ -86,6 +86,11 @@ input[type=number]:focus,
   grid-template-rows: 46px 50px 1fr 1fr 70px;
   grid-template-areas: "topbar topbar" "msg updates" "chart updates" "chart calendar" "users calendar";
 }
+@media screen and (max-width: 768px) {
+  .dashboard {
+    grid-template-areas: "topbar topbar" "msg msg" "chart chart" "updates updates" "calendar calendar" "users users";
+  }
+}
 .dashboard .topbar {
   grid-area: topbar;
   display: flex;
@@ -175,6 +180,9 @@ input[type=number]:focus,
 }
 .dashboard .updates {
   grid-area: updates;
+}
+.dashboard .updates label {
+  font-size: 12px;
 }
 .dashboard .calendar {
   grid-area: calendar;
