@@ -4,43 +4,11 @@
 }
 * {
   box-sizing: border-box;
-  font-family: Eastman Roman Trial;
+  font-family: "nunito sans";
   text-decoration: none !important;
   outline: none !important;
-  transition: all 0.3s ease-in-out;
 }
 
-::-webkit-scrollbar {
-  width: 20px;
-}
-
-::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  border-radius: 10px;
-  background-color: #bfb5ff;
-}
-
-::-webkit-scrollbar-thumb {
-  border-radius: 10px;
-  background-color: #5541d7;
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
-}
-
-@media screen and (max-width: 767px) {
-  ::-webkit-scrollbar {
-    width: 5px;
-  }
-  ::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-    border-radius: 10px;
-    background-color: #bfb5ff;
-  }
-  ::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    background-color: #5541d7;
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
-  }
-}
 h1,
 h2,
 h3,
@@ -49,7 +17,7 @@ h5,
 h6,
 label,
 button {
-  font-family: poppins;
+  font-family: nunito sans;
 }
 
 #forgotpsd {
@@ -80,20 +48,12 @@ input[type=number]:focus,
 }
 
 .dashboard {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 3fr 300px;
-  grid-template-rows: 46px 50px 1fr 1fr 70px;
-  grid-template-areas: "topbar topbar" "msg updates" "chart updates" "chart calendar" "users calendar";
-}
-@media screen and (max-width: 768px) {
-  .dashboard {
-    grid-template-areas: "topbar topbar" "msg msg" "chart chart" "updates updates" "calendar calendar" "users users";
-  }
+  max-width: 100%;
+  gap: 5px;
 }
 .dashboard .topbar {
-  grid-area: topbar;
   display: flex;
+  align-items: center;
 }
 .dashboard .topbar .form {
   flex: 3;
@@ -126,13 +86,12 @@ input[type=number]:focus,
 }
 @media screen and (max-width: 1080px) {
   .dashboard .topbar .profile {
-    flex: 2;
     font-size: 12px;
   }
 }
 @media screen and (max-width: 970px) {
   .dashboard .topbar .profile {
-    flex: 3;
+    flex: 2.5;
     font-size: 12px;
   }
   .dashboard .topbar .profile img {
@@ -167,36 +126,163 @@ input[type=number]:focus,
 .dashboard .topbar .profile div::before span {
   margin-left: 5px;
 }
-.dashboard .msg {
-  grid-area: msg;
+.dashboard .calendars .calendar, .dashboard .calendars .calendar_weekdays, .dashboard .calendars .calendar_content {
+  max-width: 300px;
 }
-.dashboard .msg h1 {
-  font-size: 30px;
-  padding: 10px;
+.dashboard .calendars .calendar {
+  margin: auto;
+  font-weight: 400;
+}
+.dashboard .calendars .calendar_content, .dashboard .calendars .calendar_weekdays, .dashboard .calendars .calendar_header {
+  position: relative;
+  overflow: hidden;
+}
+.dashboard .calendars .calendar_weekdays div {
+  display: inline-block;
+  vertical-align: top;
+}
+.dashboard .calendars .calendar_weekdays div, .dashboard .calendars .calendar_content div {
+  width: 14.28571%;
+  overflow: hidden;
+  text-align: center;
+  background-color: transparent;
+  color: #6f6f6f;
+  font-size: 14px;
+}
+.dashboard .calendars .calendar_content div {
+  border: 1px solid transparent;
+  float: left;
+  border-radius: 15%;
+}
+.dashboard .calendars .calendar_content div:hover {
+  border: 1px solid #dcdcdc;
+  cursor: default;
+}
+.dashboard .calendars .calendar_content div.blank:hover {
+  cursor: default;
+  border: 1px solid transparent;
+}
+.dashboard .calendars .calendar_content div.past-date {
+  color: #d5d5d5;
+}
+.dashboard .calendars .calendar_content div.today {
+  font-weight: bold;
+  font-size: 14px;
+  color: #4e5ddd;
+  border: 1px solid #dcdcdc;
+  background: #DBD7F4;
+}
+.dashboard .calendars .calendar_content div.selected {
+  background-color: #f0f0f0;
+}
+.dashboard .calendars .calendar_header {
+  width: 100%;
+  text-align: center;
+}
+.dashboard .calendars .calendar_header h2 {
+  padding: 0 10px;
+  font-family: "Muli", sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  color: #a2aaf0;
+  float: left;
+  width: 70%;
+  margin: 0 0 10px;
+}
+.dashboard .calendars button.switch-month {
+  background-color: transparent;
+  padding: 0;
+  outline: none;
+  border: none;
+  color: #dcdcdc;
+  float: left;
+  width: 15%;
+  transition: color 0.2s;
+}
+.dashboard .calendars button.switch-month:hover {
   color: #B9C0FE;
 }
-.dashboard .chart {
-  grid-area: chart;
+.dashboard .users {
+  display: flex;
+  gap: 5px;
+  overflow: auto;
 }
-.dashboard .updates {
-  grid-area: updates;
+.dashboard .users::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
 }
-.dashboard .updates label {
+.dashboard .users::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(gray));
+  -webkit-box-shadow: inset 2px 2px 2px rgba(255, 255, 255, 0.25), inset -2px -2px 2px rgba(0, 0, 0, 0.25);
+}
+.dashboard .users .card {
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+  max-width: 250px;
+  flex-shrink: 0;
+}
+.dashboard .users .card .pics {
+  display: grid;
+  align-content: center;
+}
+.dashboard .users .card .pics img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.dashboard .users .card h6 {
+  margin-bottom: 0;
+}
+.dashboard .users .card p {
+  margin-bottom: 0;
+}
+.dashboard .users .card a {
   font-size: 12px;
 }
-.dashboard .calendar {
-  grid-area: calendar;
+.dashboard th, .dashboard td {
+  padding: 20px;
+  font-size: 1vw;
 }
-.dashboard .users {
-  grid-area: users;
+@media screen and (max-width: 768px) {
+  .dashboard th, .dashboard td {
+    font-size: 1.5vw;
+  }
+}
+@media screen and (max-width: 575px) {
+  .dashboard th, .dashboard td {
+    font-size: 2vw;
+  }
+}
+.dashboard th b, .dashboard td b {
+  font-weight: 600;
+}
+.dashboard th .fa, .dashboard td .fa {
+  border-radius: 50%;
+  height: 50px;
+  height: 50px;
+  padding: 20px;
+  cursor: pointer;
+}
+.dashboard th .fa:hover, .dashboard td .fa:hover {
+  background-color: rgba(185, 192, 254, 0.3215686275);
+}
+.dashboard td:has(.badge, .fa) {
+  position: relative;
+}
+.dashboard td:has(.badge, .fa) .badge, .dashboard td:has(.badge, .fa) .fa {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.dashboard .nav-item a {
+  padding: 20px !important;
+  color: #a4a6b3;
 }
 
 @media screen and (max-width: 768px) {
   .sidebar {
     display: none !important;
   }
-}
-.nav-item a {
-  padding: 20px !important;
-  color: #a4a6b3;
 }/*# sourceMappingURL=main.css.map */
